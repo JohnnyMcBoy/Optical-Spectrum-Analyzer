@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+{{elem|safe}}
+
+<html>
+<script language="javascript" type="text/javascript">
+    function buttonClick(){
+    var url = document.getElementById("inputURL").value;
+    window.open ("http://flaskosa.herokuapp.com/cmd/"+url);
+    }
+</script>
+<script language="javascript" type="text/javascript">
+            function Refresh(){
+            window.location.reload();
+            }
+</script>
+<style>
+    .button{
+        background-color: tomato;
+        color: white;
+        border: 2px solid black;
+        padding: 15px 32px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .Title{
+        color: white;
+        text-align: center;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        margin-right: 50px;
+        margin-left: 50px;
+        padding: 15px 80px;
+        background-color: black;
+    }
+    .hold1{
+        margin-right: 50px;
+        margin-left: 50px;        
+    }
+    .hold2{
+        margin-right: 50px;
+        margin-left: 0px;        
+    }
+    .TxIn{
+        float: right;
+        margin-right: 0px;
+        margin-left: 0px;
+        vertical-align: bottom;    
+    }
+    .button2{
+        background-color: tomato;
+        color: white;
+        float: right;
+        border: 2px solid black;
+        padding: 7px 50px;
+        font-size: 16px;
+        text-align: center;
+        vertical-align: bottom;
+
+    }
+    .hold3{
+         float: right;
+     }
+    .Status{
+         border:3px; 
+         border-style:solid; 
+         order-color:Black;
+         margin-right: 1470px;
+         text-align: center;
+     }
+</style>
+
+<head>
+    <title>Optical Spectrum Analyzer</title>
+</head>
+<body>
+    <section class="row">
+        <header  class="Title">
+            <h1>Optical Spectrum Analyzer </h1>
+            <hr>
+        </header>
+        </header>
+        
+    </section>
+</body>
+<body>
+    <div class="hold1">
+        <section class="row">
+            <button class="button" onClick="window.location.reload();">Trace</button>
+
+            <script language="javascript" type="text/javascript">
+                function myFunctionSTART(){
+                window.open ("http://flaskosa.herokuapp.com/cmd/START");
+                Refresh();
+                }
+            </script>
+            <button class="button" onclick="myFunctionSTART()">Start</button>
+
+            <script language="javascript" type="text/javascript">
+                function myFunctionSTOP(){
+                window.open ("http://flaskosa.herokuapp.com/cmd/STOP");
+                Refresh();
+                }
+            </script>
+            <button class="button" onclick="myFunctionSTOP()">Stop</button>
+            
+            <div class="hold3">
+                <input class="TxIn" type="text" id="inputURL" name="inputURL" value="" placeholder="eg. PING" size="50"><br>
+                <input class="button2" type="button" value="Command" OnClick="buttonClick()"/>
+            </div>
+
+            <body>
+                <p class="Status"> {{ STA}} </p>
+            </body>
+    </div>
+    <div class="hold2">
+        <h2> <img> {{testvar|safe}} </h2>
+    </div>
+</body>
+</html>

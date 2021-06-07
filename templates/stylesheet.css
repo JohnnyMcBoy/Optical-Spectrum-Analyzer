@@ -1,0 +1,22 @@
+body {
+  background-color: Black;
+}
+
+h1 {
+  color: Black;
+  text-align: center;
+}
+
+h2 {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+.hold1{
+  float: left;
+  width:33.33333%;
+}
+.hold2{
+  float: right;
+  width:33.33333%;
+}
